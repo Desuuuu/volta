@@ -157,7 +157,7 @@ fn overwrite_launcher(base_path: &Path, tool: &str) -> Fallible<()> {
 basedir=`dirname "$0"`
 
 case `uname` in
-    *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+    *CYGWIN*|*MINGW*) basedir=`cygpath -w "$basedir"`;;
 esac
 
 node "$basedir/{}-cli.js" "$@"
